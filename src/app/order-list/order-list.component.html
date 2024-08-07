@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Order List</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>{{ order.id }}</td>
+                <td>{{ order.orderDate | date }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.total | currency }}</td>
+                <td>
+                    <button (click)="deleteOrder(order.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

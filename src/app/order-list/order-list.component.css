@@ -1,0 +1,68 @@
+/* General container styling */
+.container {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  /* Header styling */
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Button styling */
+  .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .btn-info {
+    background-color: #5bc0de;
+    color: white;
+  }
+  
+  .btn-info:hover {
+    background-color: #31b0d5;
+  }
+  
+  .btn-info:focus {
+    box-shadow: 0 0 0 2px rgba(91, 192, 222, 0.5);
+  }
+
+  /* Botón de eliminación */
+    .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    }
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+  

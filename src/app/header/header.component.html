@@ -1,19 +1,32 @@
 <header>
     <nav>
         <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/products">Products</a></li>
-            <li><a routerLink="/users">Users</a></li>
-            <li><a routerLink="/orders">Orders</a></li>
+            <li><a routerLink="/" routerLinkActive="router-link-active">Home</a></li>
+            <li><a routerLink="/products" routerLinkActive="router-link-active">Products</a></li>
+            <li><a routerLink="/users" routerLinkActive="router-link-active">Users</a></li>
             <li class="dropdown">
-                <a href="#">Reports</a>
+                <a>Orders</a>
                 <ul class="dropdown-menu">
-                    <li><a routerLink="/reports/active-products">Active Products</a></li>
-                    <li><a routerLink="/reports/top-customers">Top Customers</a></li>
-                    <li><a routerLink="/reports/top-sold-products">Top Sold Products</a></li>
+                    <li><a routerLink="/orders" routerLinkActive="router-link-active">Create order</a></li>
+                    <li><a routerLink="/orders/list" routerLinkActive="router-link-active">Orders List</a>
+                    </li>
                 </ul>
             </li>
-            <li><a routerLink="/search">Search products</a></li>
+            <li class="dropdown">
+                <a>Reports</a>
+                <ul class="dropdown-menu">
+                    <li><a routerLink="/reports/active-products" routerLinkActive="router-link-active">Active
+                            Products</a></li>
+                    <li><a routerLink="/reports/top-customers" routerLinkActive="router-link-active">Top Customers</a>
+                    </li>
+                    <li><a routerLink="/reports/top-sold-products" routerLinkActive="router-link-active">Top Sold
+                            Products</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/search" routerLinkActive="router-link-active">Search products</a></li>
+            <li *ngIf="authService.isAuthenticated()">
+                <a (click)="logout()">Logout</a>
+            </li>
         </ul>
     </nav>
 </header>

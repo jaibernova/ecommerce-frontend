@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   username: string = '';
@@ -16,7 +17,7 @@ export class RegisterComponent {
   register() {
     const user = { username: this.username, password: this.password, email: this.email };
     this.authService.register(user).subscribe(response => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/users']);
     }, error => {
       console.error('Registration error', error);
     });

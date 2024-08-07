@@ -11,19 +11,26 @@ import { ActiveProductsComponent } from './active-products/active-products.compo
 import { TopSoldProductsComponent } from './top-sold-products/top-sold-products.component';
 import { TopCustomersComponent } from './top-customers/top-customers.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AuthGuard } from './guards/auth.guard'; 
+import { LogoutComponent } from './logout/logout.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'products', component: ProductListComponent },
-  { path: 'products/create', component: ProductCreateComponent },
-  { path: 'products/edit/:id', component: ProductEditComponent },
-  { path: 'users', component: UserListComponent },
-  { path: 'search', component: SearchComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'reports/active-products', component: ActiveProductsComponent },
-  { path: 'reports/top-sold-products', component: TopSoldProductsComponent },
-  { path: 'reports/top-customers', component: TopCustomersComponent },
+  { path: 'products', component: ProductListComponent, canActivate: [AuthGuard] },
+  { path: 'products/create', component: ProductCreateComponent, canActivate: [AuthGuard] },
+  { path: 'products/edit/:id', component: ProductEditComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'users/edit/:id', component: UserEditComponent },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
+  { path: 'reports/active-products', component: ActiveProductsComponent, canActivate: [AuthGuard] },
+  { path: 'reports/top-sold-products', component: TopSoldProductsComponent, canActivate: [AuthGuard] },
+  { path: 'reports/top-customers', component: TopCustomersComponent, canActivate: [AuthGuard] },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'orders/list', component: OrderListComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 

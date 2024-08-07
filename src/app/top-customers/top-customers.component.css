@@ -1,0 +1,58 @@
+/* Estilos generales */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilos del título */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilos del encabezado de la tabla */
+.table thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.table thead th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Estilos de las filas de la tabla */
+.table tbody tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table tbody td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Alternar el color de fondo de las filas para mejorar la legibilidad */
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Opcional: Estilo para resaltar la fila actual o más relevante */
+.table tbody tr.highlight {
+    background-color: #d1ecf1; /* Color azul claro para resaltar */
+}
+
+/* Estilos para los datos en las filas */
+.table tbody td {
+    font-size: 14px;
+}

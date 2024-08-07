@@ -33,6 +33,9 @@ import { ActiveProductsComponent } from './active-products/active-products.compo
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { OrdersComponent } from './orders/orders.component';
+import { LogoutComponent } from './logout/logout.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { OrdersComponent } from './orders/orders.component';
     ActiveProductsComponent,
     HeaderComponent,
     FooterComponent,
-    OrdersComponent
+    OrdersComponent,
+    LogoutComponent,
+    OrderListComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
