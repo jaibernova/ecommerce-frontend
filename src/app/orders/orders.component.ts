@@ -106,12 +106,14 @@ console.log(this.userFilter)
     })).filter(item => item.quantity > 0);
   
     this.userService.getUserId(this.userFilter).subscribe(userId => {
+      
       if (userId) {
         const orderRequest = {
           orderDate: new Date().toISOString(),
           status: 'PENDING',
           userId: userId, // Aquí usamos el ID del usuario obtenido
-          items: orderItems
+          items: orderItems,
+          total: this.orderTotal
         };
   
         // Enviar la orden al backend

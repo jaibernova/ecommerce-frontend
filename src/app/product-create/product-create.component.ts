@@ -12,6 +12,7 @@ export class ProductCreateComponent {
     name: '',
     description: '',
     price: null,
+    stock: null,
     active: false
   };
 
