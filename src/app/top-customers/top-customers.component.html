@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Top 5 Frequent Customers</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Orders Placed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of topCustomers">
+                <td>{{ item[0].username }}</td>
+                <td>{{ item[0].email }}</td>
+                <td>{{ item[1] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

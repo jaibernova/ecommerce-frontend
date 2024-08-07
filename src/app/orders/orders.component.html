@@ -1,0 +1,64 @@
+<div class="container">
+    <h2>Orders</h2>
+
+    <!-- Date Range Selection -->
+    <form (ngSubmit)="calculateDiscounts()">
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" [(ngModel)]="startDate" name="startDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" [(ngModel)]="endDate" name="endDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="user">User:</label>
+            <input type="text" id="user" [(ngModel)]="userFilter" name="userFilter"
+                placeholder="Enter username or email" />
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" id="randomOrder" [(ngModel)]="randomOrder" name="randomOrder" />
+            <label for="randomOrder">Random Order</label>
+        </div>
+
+        <button type="submit">Calculate Discounts</button>
+    </form>
+
+    <!-- Discounts and Products List -->
+    <div *ngIf="products">
+        <h3>Available Products</h3>
+        <form (ngSubmit)="submitOrder()">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Discounted Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>
+                            <input type="number" [(ngModel)]="productQuantities[product.id]"
+                                name="quantity{{ product.id }}" min="0" />
+                        </td>
+                        <td>{{ calculateDiscountedPrice(product) | currency }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="totalDiscount || orderTotal">
+                <p><strong>Total Discount:</strong> {{ totalDiscount | currency }}</p>
+                <p><strong>Total Order Amount:</strong> {{ orderTotal | currency }}</p>
+            </div>
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+</div>s

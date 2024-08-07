@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Active Products</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of activeProducts">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>Active</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

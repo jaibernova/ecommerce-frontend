@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Top 5 Sold Products</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of topSoldProducts">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantitySold }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
